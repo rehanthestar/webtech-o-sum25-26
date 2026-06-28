@@ -35,3 +35,43 @@ ul li a{
 }
 
 
+form{
+
+
+    height: 500px;
+    width: 80%;
+
+    border: 1px solid grey;
+}
+
+
+
+
+.col6{
+
+    width: 400px;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+footer{
+
+
+
+    
+}
+
+.crtext{
+
+
+
+    background-color: black;
+    color: white;
+    text-align: center;
+}

@@ -8,8 +8,8 @@
     <h2>Registration Form -  Student Technology Club</h2>
  
 <?php
-    $name = $age = $email = $membershipType = $department = $contactNumber = "";
-    $nameErr = $ageErr = $emailErr = $membershipTypeErr = $departmentErr = $contactNumberErr = "";
+    $name = $age = $email = $membership = $department = $phone = "";
+    $nameErr = $ageErr = $emailErr = $membershipErr = $departmentErr = $phoneErr = "";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -24,16 +24,59 @@
             }
         }
 
-        if(empty($_POST[$age])){
+        if(empty($_POST["$age"])){
             $ageErr = "Age is required";
         }else{
 
-            $age = $_POST[$age];
+            $age = $_POST["$age"];
 
             if(!!is_numberic($age) || $age<18 || $age>30){
                 $ageErr = "Age must be between 18 and 30.";
             }
         }
+
+
+        if(!empty($_POST["$email"])){
+            $emailErr = "Email is required";
+        }else{
+
+            $email = $_POST["$email"];
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+
+                $emailErr = "Invalid Email Format";
+            }
+        }
+        
+        if(!empty($_POST["$membership"])){
+            $membershipErr = "Please select a membership type";
+        }else{
+
+            $membership = $_POST["$membership"];
+           
+        }
+        
+        if(!empty($_POST["$department"])){
+            $departmentErr = "Please select a Deprtment";
+        }else{
+
+            $department = $_POST["$department"];
+           
+        }
+        
+        
+        if(empty($_POST["phone"])){
+            $phoneErr = "phone number  is required";
+
+        }else {
+            $phone = $_POST["phone"];
+            if(!preg_match("/^[0-9 ]{11}$/", $phone)){
+                $phoneErr = "Phone number must contain exactly 11 digits";
+            }
+        }
+
+
+
+
 
 
 

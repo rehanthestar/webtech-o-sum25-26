@@ -5,9 +5,41 @@
 </head>
 <body>
  
-    <h2>Form Validation in PHP</h2>
+    <h2>Registration Form -  Student Technology Club</h2>
  
 <?php
+    $name = $age = $email = $membershipType = $department = $contactNumber = "";
+    $nameErr = $ageErr = $emailErr = $membershipTypeErr = $departmentErr = $contactNumberErr = "";
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+
+        if(empty($_POST["name"])){
+            $nameErr = "Name is required";
+
+        }else {
+            $name = $_POST["name"];
+            if(!preg_match("/^[a-zA-Z ]*$/", $name)){
+                $nameErr = "Only Letters and Spaces are allow";
+            }
+        }
+
+        if(empty($_POST[$age])){
+            $ageErr = "Age is required";
+        }else{
+
+            $age = $_POST[$age];
+
+            if(!!is_numberic($age) || $age<18 || $age>30){
+                $ageErr = "Age must be between 18 and 30.";
+            }
+        }
+
+
+
+
+
+    }
 
     
 

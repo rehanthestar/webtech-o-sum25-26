@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP Form Validation Example</title>
 </head>
 <body>
+ 
+    <h2>Form Validation in PHP</h2>
+ 
+<?php
+
     
 
-
-<h1>Hello World</h1>
-<p>Commit testing in xampp</p>
+?>
+ 
 </body>
 </html>
